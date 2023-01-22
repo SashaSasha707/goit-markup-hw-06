@@ -518,11 +518,6 @@ body {
     
 }
 
-.footer-social{
-    width: 208px;
-    margin-right: 80px;
-}
-
 .footer-title {
     margin-bottom: 16px;    
     color: #FFFFFF;
@@ -572,7 +567,11 @@ body {
     background-color: #31D0AA;
 }
 
-.subscribe-flex {
+.subscribe {
+    margin-left: auto;
+}
+
+.footer-form {
     display: flex;
     justify-content: center;
     gap: 24px;
@@ -588,10 +587,24 @@ body {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
 
+    color: var(--light-color);
+    font-size: 14px;
+    line-height: calc(20/14);
+    letter-spacing: 0.02em;
+
     background-color: transparent;
 
     outline: none;
+
+    transition: border-color var(--transition);
 }
+
+.footer-input:hover,
+.footer-input:focus {
+    border-color: var(--primary-brand-color);
+}
+
+
 
 .footer-input::placeholder {
     font-size: 12px;
@@ -777,13 +790,12 @@ body {
 .modal {
     position: absolute;
     width: 408px;
-    min-height: 576px;
     top:50%;
     left: 50%;
     background: #FCFCFC;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    padding: 24px;
+    padding: 72px 24px 24px;
     
     transform: translate(-50%, -50%) scale(1) rotate(0);
     transition: transform var(--transition);
@@ -833,12 +845,10 @@ body {
 }
 
 .modal-title {
-    padding-top: 48px;
     margin-bottom: 16px;
 
     color: var(--title-text-color);
 
-    font-family: 'Roboto';
     font-weight: 500;
     font-size: 16px;
     line-height: calc(24/16);
@@ -847,10 +857,17 @@ body {
 }
 
 .modal-label {
+    display: block;
     margin-bottom: 8px;
 }
 
+.textarea {
+    margin-bottom: 16px;
+}
+
+
 .input-text {
+    display: block;
     margin-bottom: 4px;
 
     color: var(--subtle-text-color);
@@ -905,7 +922,6 @@ body {
     height: 120px;
     width: 100%;
 
-    margin-bottom: 16px;
     padding: 8px 16px;
     
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -961,13 +977,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-right: 8px;
     
     border: 1.25px solid #2E2F42;
     border-radius: 2px;
 
     fill: transparent;
-
-    margin-right: 8px;
+    
+    cursor: pointer;
 
     transition: fill var(--transition), border var(--transition), background-color var(--transition);
 }
